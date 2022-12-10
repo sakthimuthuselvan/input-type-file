@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        body >div{
+            width: 50%;
+        }
+        .view{
+            width: 100%;
+            
+        }
+        .view img{
+            width: 100%;
+        }
+        H1{
+            COLOR:orangered;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>INPUT TYPE USING IMEAGE SHOW</h1>
+        <input type="file" id="input">
+        <div class="view"></div>
+    </div>
+
+    <script>
+       
+        let input=document.getElementById("input")
+        let view=document.getElementsByClassName("view")[0]
+
+        input.addEventListener("change",(e)=>{
+            console.log(e);
+          let img=URL.createObjectURL(input.files[0]) 
+      
+          console.log(img);
+
+          let hi=document.createElement("img")
+          view.append(hi)
+
+          hi.src=img
+        })
+
+    </script>
+</body>
+</html>
